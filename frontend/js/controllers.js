@@ -21,10 +21,9 @@ cbControllers.controller('LoginController',
 
                 // Also create new match
                 match = new Match();
-                match.players = [$cookies.player_id];
+                match.players = $cookies.player_id;
                 match.$save(function(match, response_headers){
                     $cookies.match_id = match.id;
-                    alert(match.id);
                     $cookies.com_id = match.players[1];
                     $cookies.com_name = 'Mensa Monkey';
                     $cookies.com_color = '#000';
