@@ -1,0 +1,38 @@
+      <div class="row">
+        <div class="col-lg-3" ng-controller='LoginController'>
+          <div class="alert alert-danger" ng-show="showAlert">Login Failed. Please verify entered e-mail and password</div>
+          <form name="login_form" role="form" ng-submit='submitForm()' novalidate>
+            <div class="form-group" 
+                 ng-class="{ 'has-error' : login_form.player_name.$invalid && !login_form.player_name.$pristine }">
+                <label for="player-name">Player Name</label>
+                <input id="player-name" type="text" name="player_name" placeholder="Enter your name here" class="form-control" 
+                       ng-model='login.player_name' 
+                       ng-focus="showAlert=false" 
+                       ng-minlength='4' 
+                       ng-maxlength='64' 
+                       ng-required='true'>
+                <p id="name-message" class="input-message hide">Please enter a valid player name</p>
+            </div>
+            <div class="form-group"
+                 ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+                <label for="">Checker Color</label>
+                <select id="player-color" name="player_color" class="form-control" 
+                        ng-model='login.color'>
+                  <option class="red" value="#ff5f5f">Red</option>
+                  <option class="green" value="#5fff5f">Green</option>
+                  <option class="blue" value="#0000ff">Blue</option>
+                  <option value="">Whatever Color</option>
+                </select>
+                <!--
+                <p ng-show="loginForm.color.$invalid && !loginForm.color.$pristine" class="help-block">Password is required.</p>
+                -->
+            </div>
+            <button type="submit" class="btn btn-primary btn-default pull-right">Let's Play  &gt; </button>
+          </form>
+        </div>
+
+        <div class="col-lg-9">
+        </div>
+       </div>
+      </div>
+

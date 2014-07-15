@@ -1,0 +1,24 @@
+      <!-- Example row of columns -->
+      <div class="row">
+        
+        <div class="col-sm-3" ng-controller="MatchController">
+            <div id="profile" class="panel panel-info">
+                <div class="panel-heading">Match Information</div>
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
+
+        <div id="cb-container" class="col-sm-9" ng-controller="CheckerBoardController">
+          <div id="checkerboard">
+            <div class="row checker-row" ng-repeat="row in cell_list">
+              <div class="pull-left checker-cell" 
+                    ng-repeat="col in cell_list"
+                    ng-class-odd="cell-odd">
+                <div class="cell-checked"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>

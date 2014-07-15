@@ -1,0 +1,71 @@
+h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: gray;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+h5 {
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+#player-name.ng-valid {
+  background-color: #CAFFC3;
+}
+.page-inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.form-group {
+  position: relative;
+}
+#checkerboard {
+  margin-left: 50px;
+}
+#checkerboard .row {
+  margin-left: 0px;
+}
+.checker-cell {
+  height: 50px;
+  width: 50px;
+  border: solid 1px #e0e0e0;
+  margin: 0 2px 2px 0;
+  padding: 10px;
+}
+.checker-row:nth-child(even) .checker-cell:nth-child(odd) {
+  background-color: #f1f1f1
+}
+.checker-row:nth-child(odd) .checker-cell:nth-child(even) {
+  background-color: #f1f1f1
+}
+.cell-checked {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  border: solid 2px white;
+}
+.red {
+  color: #ff5f5f;
+}
+.green {
+  color: #5fff5f;
+}
+.blue {
+  color: #5f5fff;
+}
+.input-message {
+  position: absolute;
+  left: 300px;
+  width: 300px;
+  border: solid 1px #e0e0e0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: -33px;
+}
