@@ -11,7 +11,8 @@
                        ng-minlength='4' 
                        ng-maxlength='64' 
                        ng-required='true'>
-                <p id="name-message" class="input-message hide">Please enter a valid player name</p>
+                <p id="name-message" class="input-message"
+                   ng-show="login_form.player_name.$invalid && !login_form.player_name.$pristine">Please enter a valid player name</p>
             </div>
             <div class="form-group"
                  ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
@@ -21,7 +22,6 @@
                   <option class="red" value="#ff5f5f">Red</option>
                   <option class="green" value="#5fff5f">Green</option>
                   <option class="blue" value="#0000ff">Blue</option>
-                  <option value="">Whatever Color</option>
                 </select>
                 <!--
                 <p ng-show="loginForm.color.$invalid && !loginForm.color.$pristine" class="help-block">Password is required.</p>

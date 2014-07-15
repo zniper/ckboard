@@ -2,23 +2,37 @@
       <div class="row">
         
         <div class="col-sm-3" ng-controller="MatchController">
-            <div id="profile" class="panel panel-info">
+            <div id="profile" class="panel panel-primary">
                 <div class="panel-heading">Match Information</div>
                 <div class="panel-body">
+                  <div>{{player_name}} vs. Computer</div>
                 </div>
+            </div>
+
+            <div id="match-end-message" class="alert alert-success">
+              Congratulations! The checkerboard has been completely filled. And you won, I guess.
             </div>
         </div>
 
         <div id="cb-container" class="col-sm-9" ng-controller="CheckerBoardController">
-          <div id="checkerboard">
-            <div class="row checker-row" ng-repeat="row in cell_list">
-              <div class="pull-left checker-cell" 
-                    ng-repeat="col in cell_list"
-                    ng-class-odd="cell-odd">
-                <div class="cell-checked"></div>
+          <div id="checkerboard" style="width:{{checkerboard_width}}px">
+            <div class="cell-container">
+              <div id="cell-{{cell.row}}-{{cell.col}}" class="pull-left checker-cell" 
+                    ng-repeat="cell in cells"
+                    ng-class="{'dark-cell': (cell.row % 2 == 0)&&(cell.col % 2 ==0) || (cell.row % 2 == 1)&&(cell.col % 2 == 1)}"
+                    ng-click="precheckCell(cell, $event);"
+                    ng-model="cell">
+                <div class="cell-checked" style="background-color:{{cell.color}}"></div>
+              </div>
+              <div id="submit-move">
+                <button class="btn btn-small btn-danger"
+                        ng-click="submitMove($event)">Submit</div>
               </div>
             </div>
           </div>
         </div>
 
       </div>
+
+
+    </div>

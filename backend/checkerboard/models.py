@@ -15,7 +15,7 @@ class Player(models.Model):
 
 class Match(models.Model):
     """ Single match of two players """
-    BOARD_SIZE = 4
+    BOARD_SIZE = 10
     start_time = models.DateField(_('Start Time'), auto_now_add=True)
     end_time = models.DateField(_('End Time'), blank=True, null=True)
     players = models.ManyToManyField('Player', verbose_name=_('Players'),

@@ -28,13 +28,23 @@ checkerboard.config(['$resourceProvider', function ($resourceProvider) {
 
 API_URL = 'http://localhost:8000/cb/';
 
-checkerboard.factory('Players', ['$resource', function($resource) {
+checkerboard.factory('Player', ['$resource', function($resource) {
     return $resource(API_URL + 'players/:playerId',
-        { playerId: '@playerId' }, {
+        {playerId: '@id'}, {
             edit: {
                 method: 'PUT',
                 params: { playerId: '@playerId' },
                 isArray: false
             }
         });
+}]);
+
+checkerboard.factory('Match', ['$resource', function($resource) {
+    return $resource(API_URL + 'matches/:matchId',
+        {matchId: '@matchId'}, {});
+}]);
+
+checkerboard.factory('Move', ['$resource', function($resource) {
+    return $resource(API_URL + 'matches/:matchId/moves/:moveId',
+        {matchId: '@matchId', moveId: '@moveId'}, {});
 }]);

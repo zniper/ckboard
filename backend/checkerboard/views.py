@@ -16,6 +16,19 @@ class PlayerList(ListCreateAPIView):
 class MatchList(ListCreateAPIView):
     model = Match
 
+    def post_save(self, obj, created=False):
+        if not created:
+            return
+        # Assign computer player if one is missing
+        if obj.players.count() == 1:
+            try:
+                com_player = Player.objects.filter(is_human=False)[0]
+            except IndexError:
+                com_player = Player(name='Mensa Monkey', color='#000')
+                com_player.save()
+            finally:
+                obj.players.add(com_player)
+
 
 class PlayerDetails(RetrieveUpdateAPIView):
     model = Player

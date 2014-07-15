@@ -34,12 +34,13 @@ h5 {
   border: solid 1px #e0e0e0;
   margin: 0 2px 2px 0;
   padding: 10px;
+  cursor: pointer;
 }
-.checker-row:nth-child(even) .checker-cell:nth-child(odd) {
-  background-color: #f1f1f1
+.checker-cell.read-only {
+  cursor: not-allowed;
 }
-.checker-row:nth-child(odd) .checker-cell:nth-child(even) {
-  background-color: #f1f1f1
+.dark-cell {
+  background-color: #f1f1f1;
 }
 .cell-checked {
   width: 30px;
@@ -68,4 +69,19 @@ h5 {
   -webkit-border-radius: 5px;
   padding: 5px 10px;
   margin-top: -33px;
+  background-color: #FFF3C5;
+}
+#submit-move {
+  position: absolute;
+  display: none;
+}
+#submit-move .btn {
+  height: 22px;
+  padding: 0px 5px;
+}
+#cb-container {
+  position: relative;
+}
+#match-end-message {
+  display: none; 
 }
